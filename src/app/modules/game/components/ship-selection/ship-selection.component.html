@@ -1,0 +1,8 @@
+<div *ngIf="ship" >
+{{ship.name}}
+<mat-grid-list [cols]="ship.totalPlaces" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let p of ship.parts">
+        <mat-icon (click)="onShipClick()" color="accent">square</mat-icon>
+    </mat-grid-tile>
+</mat-grid-list>
+</div>

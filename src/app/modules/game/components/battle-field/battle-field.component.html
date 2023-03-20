@@ -1,0 +1,10 @@
+<div class="container">
+    <app-ship-list-selection (shipClick)="onShipSelected($event)"></app-ship-list-selection>
+    <div class="battle-container">
+    <mat-grid-list [cols]="game.battleField.columsCount + 1" rowHeight="1:1">
+        <mat-grid-tile *ngFor="let point of game.battleField.battlePoints">
+            <app-battle-point (pointClick)="onPointSelected($event)" [point]="point"></app-battle-point>
+        </mat-grid-tile>
+    </mat-grid-list>
+    </div>
+</div>
