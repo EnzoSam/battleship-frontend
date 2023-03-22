@@ -26,14 +26,13 @@ export class BattleFieldComponent implements OnInit {
   onShipSelected(ship:Ship)
   {
     this.shipSelected = ship;
-    alert(ship);
   }
 
   onPointSelected(point:BattlePoint)
   {
     if(this.shipSelected)
-      point.caption = this.shipSelected?.name;
-
-      alert(point);
+    {
+      this._gameService.putShipPositopm(point, this.shipSelected,this.game);
+    }
   }
 }

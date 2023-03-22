@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BaseService } from 'src/app/services/baseService';
+import { BattlePoint } from '../models/battlePoint.model';
 import { Game } from '../models/game.model';
 import { Ship } from '../models/ship.model';
 import { ShipsService } from './ships.service';
@@ -35,4 +36,9 @@ export class GameService extends BaseService {
     {
         return this.game;
     }
+
+     putShipPositopm(battlePoint:BattlePoint, ship:Ship, game:Game)
+     {
+        game.battleField.putShip(ship, battlePoint);
+     }
 }

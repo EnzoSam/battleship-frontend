@@ -1,3 +1,8 @@
-<div *ngIf="point" (click)="onPointClick()">
-    {{point.caption}}
+<div *ngIf="point" (click)="onPointClick()">    
+    <div *ngIf="point.shipPart">
+        <mat-icon color="accent">square</mat-icon>
+    </div>
+    <div *ngIf="!point.shipPart">
+        Null
+    </div>
 </div>
