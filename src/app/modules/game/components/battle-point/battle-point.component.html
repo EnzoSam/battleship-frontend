@@ -1,8 +1,11 @@
-<div *ngIf="point" (click)="onPointClick()">    
+<div class="point-container" *ngIf="point" (click)="onPointClick()">    
     <div *ngIf="point.shipPart">
-        <mat-icon color="accent">square</mat-icon>
+        <app-ship-part [shipPart]="point.shipPart"></app-ship-part>
     </div>
-    <div *ngIf="!point.shipPart">
-        Null
+    <div *ngIf="!point.shipPart && !point.isHeader">
+        
     </div>
+    <div *ngIf="point.isHeader">
+        {{point.caption}}
+    </div>    
 </div>

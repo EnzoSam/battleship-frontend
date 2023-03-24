@@ -19,5 +19,6 @@ export class ShipSelectionComponent implements OnInit {
   onShipClick()
   {
     this.shipClick.emit(this.ship);
+    console.log(this.ship);
   }
 }

@@ -15,26 +15,14 @@ export class BattleField
 
     generatePoints()
     {
-        for(let r = 0; r <= this.rowsCount + 1;r++)
+        for(let r = 0; r < this.rowsCount;r++)
         {
             this.battlePoints[r] = [];
-            for(let c = 0; c <= this.columsCount + 1;c++)
+            for(let c = 0; c < this.columsCount;c++)
             {                                
                 let bPoint = new BattlePoint();
                 bPoint.numRow = r;
                 bPoint.numCol=c;
-                bPoint.row = rowsNames[r-1];
-                bPoint.column = c.toString();
-                if(r === 0 && c > 0)
-                {                                        
-                    bPoint.caption = c.toString();
-                    bPoint.isHeader=true;
-                }
-                else if(c === 0 && r>0)
-                {
-                    bPoint.caption = rowsNames[r-1];
-                    bPoint.isHeader=true;
-                }
                 this.battlePoints[r][c] = bPoint;
             }
         }
@@ -43,21 +31,24 @@ export class BattleField
     putShip(ship:Ship, point:BattlePoint)
     {
         let n = 0;
-        let startPosition = 0;
         if(point.numCol+ship.totalPlaces <= this.columsCount)
         {
             n=1;
-            startPosition=point.numCol;
         }
-        else if(point.numCol+ship.totalPlaces >= 1){
+        else if(point.numCol-ship.totalPlaces >= 1){
             n=-1;
-            startPosition = point.numCol+ship.totalPlaces;
         }
 
+        console.log(ship);
+        console.log(n);
+        console.log(this.columsCount);
+        console.log(point);
+        let startPosition = point.numCol;
         for(let p of ship.parts)
         {
             this.battlePoints[point.numRow][startPosition].shipPart = p;
             startPosition+=n;
+            
         }
     }
 }

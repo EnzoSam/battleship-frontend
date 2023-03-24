@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { rowsNames } from '../../constants/battle.constant';
 import { BattlePoint } from '../../models/battlePoint.model';
 import { Game } from '../../models/game.model';
 import { Ship } from '../../models/ship.model';
@@ -13,9 +14,11 @@ export class BattleFieldComponent implements OnInit {
 
   game:Game;
   shipSelected?:Ship;
+  rowsHeader:any;
 
   constructor(private _gameService:GameService) {
 
+    this.rowsHeader = rowsNames;
     this.game = _gameService.getGame();
    }
 

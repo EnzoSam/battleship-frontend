@@ -10,6 +10,7 @@ import { AngularMaterialModule } from 'src/app/angular-material.module';
 import { ShipListSelectionComponent } from './components/ship-list-selection/ship-list-selection.component';
 import { ShipSelectionComponent } from './components/ship-selection/ship-selection.component';
 import { ShipsService } from './services/ships.service';
+import { ShipPartComponent } from './components/ship-part/ship-part.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ShipsService } from './services/ships.service';
         BattleFieldComponent,
         BattlePointComponent,
         ShipListSelectionComponent,
-        ShipSelectionComponent
+        ShipSelectionComponent,
+        ShipPartComponent
   ],
   imports: [
     CommonModule,

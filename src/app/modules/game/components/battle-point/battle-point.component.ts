@@ -20,7 +20,7 @@ export class BattlePointComponent implements OnInit {
 
   onPointClick()
   {
-    if(this.point && !this.point.isHeader)
+    if(this.point && !this.point.shipPart || this.point?.shipPart === undefined)
       this.pointClick.emit(this.point);
   }
 }

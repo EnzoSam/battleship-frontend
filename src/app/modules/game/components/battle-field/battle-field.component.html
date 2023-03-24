@@ -1,12 +1,28 @@
-<div class="container">
+<div>
+<div class="battle-container">
     <app-ship-list-selection (shipClick)="onShipSelected($event)"></app-ship-list-selection>
     <div class="battle-container">
-    <mat-grid-list [cols]="game.battleField.columsCount + 1" rowHeight="1:1">
-        <ng-container  *ngFor="let row of game.battleField.battlePoints; let i = index">
-            <mat-grid-tile *ngFor="let point of row let c = index">
-                <app-battle-point (pointClick)="onPointSelected($event)" [point]="point"></app-battle-point>
-            </mat-grid-tile>
-        </ng-container>
-    </mat-grid-list>
-    </div>
+        <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th *ngFor="let row of game.battleField.battlePoints; let i = index">{{i}}</th>
+              </tr>
+            </thead>
+            <tbody>
+                <ng-container  *ngFor="let row of game.battleField.battlePoints; let i = index">                
+                    <tr>
+                        <th>{{rowsHeader[i]}}</th>
+                        <td *ngFor="let point of row let c = index">
+                            <app-battle-point (pointClick)="onPointSelected($event)" [point]="point"></app-battle-point>
+                        </td>
+                    </tr>
+                </ng-container>
+            </tbody>
+          </table>
+    </div>    
+</div>
+<div class="btn-start">
+    <button mat-raised-button color="primary">Comenzar Juego</button>    
+</div>
 </div>
