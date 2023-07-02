@@ -2,3 +2,13 @@ img{
     width: 100%;
     height: 660px;
 }
+
+button
+{
+    position: absolute;    
+    bottom: 100px;
+    left: 50%;
+    z-index: 1;
+    width: 180px;
+    height: 60px;
+}

@@ -11,6 +11,7 @@ import { ShipListSelectionComponent } from './components/ship-list-selection/shi
 import { ShipSelectionComponent } from './components/ship-selection/ship-selection.component';
 import { ShipsService } from './services/ships.service';
 import { ShipPartComponent } from './components/ship-part/ship-part.component';
+import { BetSettingComponent } from './components/bet-setting/bet-setting.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ShipPartComponent } from './components/ship-part/ship-part.component';
         BattlePointComponent,
         ShipListSelectionComponent,
         ShipSelectionComponent,
-        ShipPartComponent
+        ShipPartComponent,
+        BetSettingComponent
   ],
   imports: [
     CommonModule,

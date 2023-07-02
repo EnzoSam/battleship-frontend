@@ -1,5 +1,6 @@
 export const routesPaths = {    
     root: "",
+    login_type:"login-type",
     login:"login"
   };
 

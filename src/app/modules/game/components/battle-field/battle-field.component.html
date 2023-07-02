@@ -1,6 +1,11 @@
 <div>
 <div class="battle-container">
-    <app-ship-list-selection (shipClick)="onShipSelected($event)"></app-ship-list-selection>
+    <div>
+        <div>
+            <app-ship-list-selection (shipClick)="onShipSelected($event)"></app-ship-list-selection>
+            <app-bet-setting></app-bet-setting>
+        </div>
+    </div>
     <div class="battle-container">
         <table>
             <thead>

@@ -7,6 +7,7 @@ import { appRoutingProviders, routing } from './setting-routing';
 import { PersonalDataComponent } from './components/personal-data/personal-data.component';
 import { InterceptorService } from 'src/app/services/interceptor.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AngularMaterialModule } from 'src/app/angular-material.module';
 
 
 
@@ -17,6 +18,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     PersonalDataComponent
   ],
   imports: [
+    AngularMaterialModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,

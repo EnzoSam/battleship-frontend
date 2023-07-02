@@ -16,7 +16,7 @@ declare let window: any;
 export class Web3Service {
 
   private web3: any;
-  private chainIds:string[]= ['0x4'];
+  private chainIds:string[]= ['0x4','0x5'];
   private addressUser:any=new BehaviorSubject<string>('');
 
 
@@ -48,6 +48,7 @@ export class Web3Service {
       this.handleAccountsChange();
     }
     else{
+      console.log(chainId);
       alert('Solo disponible para la red Rinkeby (Ethereum).');
     }
 
@@ -55,6 +56,7 @@ export class Web3Service {
     {
       if(!this.chainIds.includes(res))
       {
+        console.log(chainId);
         alert('Solo disponible para la red Rinkeby (Ethereum).');
       }
       else{
@@ -67,10 +69,13 @@ export class Web3Service {
   {
     const accounts :string[] = await window.ethereum.request({method:'eth_requestAccounts'});
     this.addressUser.next(accounts[0]);
-
+    console.log(accounts[0]);
+    this.getSaldo();
     window.ethereum.on('accountsChanged',(accounts:string[])=>
       {
+        
         this.addressUser.next(accounts[0]);
+        
       });
   }
 
@@ -120,4 +125,17 @@ export class Web3Service {
       return Promise.resolve(trans);
   }
 
+
+  getSaldo()
+  {
+
+    const contract = new this.web3.eth.Contract(contractAbi, Contract.address);
+    contract.methods.balanceOf('0xf9efe64c0d8e11536bf4a903e80de48dab9b13f1').call()
+    .then((balance:any) => {
+      console.log(`El saldo es: ${balance / 10 ** 18}`);
+    })
+    .catch((error:any) => {
+      console.error(error);
+    });    
+  }
 }

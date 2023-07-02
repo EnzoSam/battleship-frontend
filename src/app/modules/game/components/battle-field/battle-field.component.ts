@@ -36,6 +36,7 @@ export class BattleFieldComponent implements OnInit {
     if(this.shipSelected)
     {
       this._gameService.putShipPositopm(point, this.shipSelected,this.game);
+      this.shipSelected = undefined;
     }
   }
 }

@@ -3,7 +3,8 @@ export const routesPaths = {
     settings:'settings',
     user:'user',
     auth: "auth",
-    game:'game'
+    game:'game',
+    login_type:'login-type'
   };
 
   export const routesParams = {    

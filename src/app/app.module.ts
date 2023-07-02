@@ -21,6 +21,7 @@ import { FooterComponent } from './components/layout/footer/footer.component';
 import { NavigationComponent } from './components/layout/navigation/navigation.component';
 import { SkeletonComponent } from './components/layout/skeleton/skeleton.component';
 import { HomeComponent } from './components/app/home/home.component';
+import { AddressComponent } from './components/app/address/address.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { HomeComponent } from './components/app/home/home.component';
     FooterComponent,
     NavigationComponent,
     SkeletonComponent,
-    HomeComponent
+    HomeComponent,
+    AddressComponent
   ],
   imports: [
     CommonModule,

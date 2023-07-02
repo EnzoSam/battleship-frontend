@@ -1,8 +1,8 @@
 export const Site = {
-    name: "Cripto Cheques"
+    name: "Battleship"
   };
 
 export const Contract = {
-    address: "0xe37b49fa6067595ed0079da2393c722116127494",
-    owner: "0xB9D1B86e46863E829C4D3262984aE7b380242F5D"
+    address: "0xDD8344E4641F5a74d4b841B90f6F3317DCff0550",
+    owner: "0xf9EFE64C0d8E11536BF4a903e80De48dAB9b13F1"
   };  
